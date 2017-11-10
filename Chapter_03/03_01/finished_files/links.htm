@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Targeting link states</title>
+<link href="_css/styles.css" rel="stylesheet" type="text/css">
+<style>
+/*Styles go here*/
+a:link {
+	color: #B37631;
+}
+a:visited {
+	color: #6C778C;
+}
+a:hover {
+	color: #C17532;
+	text-decoration: none;
+}
+a:active {
+	color: red;
+	position:relative;
+	top:1px;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>CSS Selectors</h1>
+  <h2>Targeting Link States</h2>
+</header>
+<main>
+  <table class="compatibility">
+    <caption>
+    Browser compatibility
+    </caption>
+    <tr>
+      <th class="chrome">Chrome</th>
+      <th class="mozilla">Firefox (Gecko)</th>
+      <th class="IE">Internet Explorer</th>
+      <th class="opera">Opera</th>
+      <th class="safari">Safari</th>
+    </tr>
+    <tr>
+      <td><span class="yes">1.0</span></td>
+      <td><span class="yes">1.0</span></td>
+      <td><span class="yes">3.5</span></td>
+      <td><span class="yes">3.5</span></td>
+      <td><span class="yes">1.0</span></td>
+    </tr>
+  </table>
+  <article class="summary">
+    <p>CSS can target link states by using the <strong>:link</strong>, <strong>:visited</strong>, <strong>:hover</strong>, and <strong>:active</strong> pseudo-class selectors. These will target any unvisited link with an <strong>href</strong> attribute, any visited link, any link currently being hovered over, and any link that is currently being interacted with. If used in combination it is recommended to use them in this order, as they share the same level of specificity and <strong>:link</strong> or <strong>:visited</strong> styling could overwrite <strong>:hover</strong> or <strong>:active</strong> styling. Due to privacy concerns there are limits on the styles you can apply to visited links. For the most part you are limited to <em>color</em>, <em>background-color</em>, and <em>border</em> properties.</p>
+<h3>Syntax</h3>
+    <p>To target link states start with the anchor element selector (<strong>a</strong>) follow it with a colon(<strong>:</strong>) and then the desired state (<strong>link</strong>, <strong>visited</strong>, <strong>hover</strong>, or <strong>active</strong>) with no whitespace. The :link pseudo-class selector doesn&rsquo;t require the anchor element preceding it, although it there&rsquo;s no real reason to leave it off. The <strong>:hover</strong> and <strong>:active</strong> pseudo-class selectors are not exclusive to anchor elements.</p>
+<figure>
+      <pre>
+<code>
+<span class="label">unvisted link</span>
+<span class="selector">a:link</span> {
+  color: red;
+    }
+
+<span class="label">visited link</span>
+<span class="selector">a:visited</span> {
+  color: gray;
+    }
+    
+<span class="label">hovered link</span>
+<span class="selector">a:hover</span> {
+  color: black;
+    }   
+    
+<span class="label">active link</span>
+<span class="selector">a:hover</span> {
+  border: 1px solid red;
+    } 
+    
+</code></pre>
+      <figcaption>Targeting link states</figcaption>
+    </figure>
+  </article>
+  <article class="example">
+<h3>Example:</h3>
+      <h4>Styling links</h4>
+      <p>Style the different states of <a href="example.htm" title="sample link">this link</a>.</p>
+      <p><a title="no link">This link</a> has no href attribute.</p>
+  </article>
+</main>
+</body>
+</html>

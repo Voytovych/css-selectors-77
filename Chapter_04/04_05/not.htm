@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Negation Selector</title>
+<link href="_css/styles.css" rel="stylesheet" type="text/css">
+<style>
+/*styles go here*/
+</style>
+</head>
+<body>
+<header>
+  <h1>CSS Selectors</h1>
+  <h2>Negation Selector</h2>
+</header>
+<main>
+  <table class="compatibility">
+    <caption>
+    Browser compatibility
+    </caption>
+    <tr>
+      <th class="chrome">Chrome</th>
+      <th class="mozilla">Firefox (Gecko)</th>
+      <th class="IE">Internet Explorer</th>
+      <th class="opera">Opera</th>
+      <th class="safari">Safari</th>
+    </tr>
+    <tr>
+      <td><span class="yes">1</span></td>
+      <td><span class="yes">1.0</span></td>
+      <td><span class="yes">9</span></td>
+      <td><span class="yes">9.5</span></td>
+      <td><span class="yes">3.2</span></td>
+    </tr>
+  </table>
+  <article class="summary">
+    <p>Matches any element that is not represented in the expressed argument. Any simple selector can be passed to the argument, although it cannot accept another negation selector or any of the pseudo-element selectors. It&rsquo;s easier to understand if you can see how it works:</p>
+    <ul>
+      <li><strong>:not(p)</strong> matches all elements except paragraphs</li>
+      <li><strong>p:not([class])</strong> matches all paragraphs except those with a class attribute</li>
+      <li><strong>li:not(:last-child) </strong>matches all list items except the last one</li>
+    </ul>
+<h3>Syntax</h3>
+    <p>The negation selector is written as a pseudo-class selector, meaning there is first a colon(<strong>:</strong>) followed by the word <strong>not</strong>. After the word not the argument is passed into a set of <strong>parentheses</strong>. No whitespace is used in any of the elements. Inside the parentheses simple selectors are constructed based on their own syntax rules. To make it element specific, you can place a simple selector prior to the colons with no whitespace. <br clear="ALL">
+    </p>
+<figure>
+      <pre>
+<code>
+
+<span class="selector">:not(p)</span> {
+  font-size: 2em;
+    }
+
+<span class="selector">p:not(.large)</span> {
+  font-size: 0.8em;
+    }
+ 
+</code></pre>
+      <figcaption>Negatin selectors</figcaption>
+    </figure>
+  </article>
+  <article class="example">
+    <h3>Example:</h3>
+<h4>Using the negation selector</h4>
+<p>One of the trickier parts of using the negation selector is anticipating exactly which elements it will match. Since you're eliminating a specific instance of an element from being targeted, it means that all other instances of that element or elements will match. This illustrates why care should be taken when planning its use.</p>
+<p class="second">This paragraph has the class "second". </p>
+<p class="third">This paragraph has the class "third".</p>
+<h4>A list of things in an article</h4>
+<ul>
+<li class="tip sample current">Thing one</li>
+<li class="sample current">Thing two</li>
+<li class="tip current">Thing three</li>
+<li class="tip sample">Thing four</li>
+<li class="tip">Thing five</li>
+<li class="tip current">Thing six</li>
+<li class="current sample">Thing seven</li>
+<li class="sample">Thing eight</li>
+<li class="tip sample">Thing nine</li>
+<li class="current">thing ten</li>
+</ul>
+</article>
+  </article>
+</main>
+</body>
+</html>

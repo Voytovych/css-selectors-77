@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>nth-child syntax</title>
+<link href="_css/styles.css" rel="stylesheet" type="text/css">
+<style>
+.example p {
+	font-family: Georgia, Times, serif;
+	margin: 0;
+}
+blockquote {
+	background: #D1DDF2;
+	padding: 1em;
+	width: 60%;
+	margin-bottom: 1em;
+}
+cite {
+	display: block;
+	font-weight: bold;
+	text-align: right;
+}
+.example h4 {
+    font-size: 1.4em;
+}
+h4 + h5 {
+    color: #777;
+    font-weight: normal;
+}
+h4 + h5 + p {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>CSS Selectors</h1>
+  <h2>nth-Child Selectors</h2>
+</header>
+<main>
+  <table class="compatibility">
+    <caption>
+    Browser compatibility
+    </caption>
+    <tr>
+      <th class="chrome">Chrome</th>
+      <th class="mozilla">Firefox (Gecko)</th>
+      <th class="IE">Internet Explorer</th>
+      <th class="opera">Opera</th>
+      <th class="safari">Safari</th>
+    </tr>
+    <tr>
+      <td><span class="yes">1</span></td>
+      <td><span class="yes">3.5</span></td>
+      <td><span class="yes">9</span></td>
+      <td><span class="yes">9.5</span></td>
+      <td><span class="yes">3.1</span></td>
+    </tr>
+  </table>
+  <article class="summary">
+    <p>Matches elements based on keywords or patterns that are passed into the selector as an argument. In it&rsquo;s simplest form it matches elements based on the <strong>even</strong> or <strong>odd</strong> keywords, returning all odd or even numbered targeted elements. If a single value is passed into the selector that specific element is returned if it exists. For example the selector <strong>li:nth-child(3)</strong> would match the third list item in a list. It gets a little more complicated when you consider the pattern matching formula of <strong>(an + b)</strong>, where <strong>a</strong> is the number to match, <strong>n</strong> represents a repeating pattern, and <strong>b</strong> is a starting offset. The value <strong>(3n)</strong> would match every third item, starting from the third item and continuing (so 3, 6, 9, and so on). The value <strong>(3n + 2)</strong> would match every third item, <em>starting</em> with the second item (so 2, 5, 8, and so on). Some values are redundant,<strong> (2n + 2)</strong> would be the same as <strong>(2n)</strong>, for example. Negative values can be used for both <strong>a </strong>and <strong>b</strong> values, and can allow you to count backwards, but a match will be returned only if they result in a positive value. The value <strong>(-2n + 10)</strong> would start at 10 and count backwards by two, returning the 10th, 8th, 6th, 4th, and 2nd elements.</p>
+    <p>There are four variations to nth-child selectors; <strong>nth-child(n)</strong>, <strong>nth-last-child(n)</strong>, <strong>nth-of-type(n)</strong>, and <strong>nth-last-of-type(n)</strong>.</p>
+    <h3>Syntax</h3>
+    <p>As a pseudo-class selector, nth-child selectors start with a colon (<strong>:</strong>), followed by the appropriate selector (<strong>nth-child</strong>), which is followed by a parentheses containing either a keyword (<strong>even</strong> or <strong>odd</strong>) or a <strong>pattern matching formula</strong>.</p>
+    <figure>
+      <pre>
+<code>
+<span class="label">every 2nd dt element:</span>
+<span class="selector">dt:nth-of-type(2n)</span> {
+  color: red;
+    }
+
+<span class="label">every 2nd paragraph, starting with the third:</span>
+<span class="selector">p:nth-of-type(2n + 3)</span> {
+  color: red;
+    }
+    
+    </code></pre>
+      <figcaption>Matching by element type</figcaption>
+    </figure>
+  </article>
+  <article class="example">
+    <h3>Example:</h3>
+    <section>
+      <h4>Prior Analytics</h4>
+      <h5>BOOK 1</h5>
+      <p>By Aristotle</p>
+      <h5>Part 1</h5>
+      <p> We must first state the subject of our inquiry and the faculty to which it belongs: its subject is demonstration and the faculty that carries it out demonstrative science. We must next define a premiss, a term, and a syllogism, and the nature of a perfect and of an imperfect syllogism; and after that, the inclusion or noninclusion of one term in another as in a whole, and what we mean by predicating one term of all, or none, of another.</p>
+      <p>Opening statement, defines what it means to state a question.</p>
+      <p>A premiss then is a sentence affirming or denying one thing of another. This is either universal or particular or indefinite. By universal I mean the statement that something belongs to all or none of something else; by particular that it belongs to some or not to some or not to all; by indefinite that it does or does not belong, without any mark to show whether it is universal or particular, e.g. 'contraries are subjects of the same science', or 'pleasure is not good'. The nature then of a premiss and the difference between syllogistic, demonstrative, and dialectical premisses, may be taken as sufficiently defined by us in relation to our present need, but will be stated accurately in the sequel. </p>
+      <p>Defines a basic premiss and its nature.</p>
+      <blockquote>It is the mark of an educated mind to be able to entertain a thought without accepting it. <cite> - Aristotle</cite></blockquote>
+      <h5>Part 2</h5>
+      <p>Every premiss states that something either is or must be or may be the attribute of something else; of premisses of these three kinds some are affirmative, others negative, in respect of each of the three modes of attribution; again some affirmative and negative premisses are universal, others particular, others indefinite. It is necessary then that in universal attribution the terms of the negative premiss should be convertible, e.g. if no pleasure is good, then no good will be pleasure; the terms of the affirmative must be convertible, not however, universally, but in part, e.g. if every pleasure,is good, some good must be pleasure; the particular affirmative must convert in part (for if some pleasure is good, then some good will be pleasure); but the particular negative need not convert, for if some animal is not man, it does not follow that some man is not animal.</p>
+      <p>Refines the nature of premisses into positive or negative aspects</p>
+      <p>First then take a universal negative with the terms A and B. If no B is A, neither can any A be B. For if some A (say C) were B, it would not be true that no B is A; for C is a B. But if every B is A then some A is B. For if no A were B, then no B could be A. But we assumed that every B is A. Similarly too, if the premiss is particular. For if some B is A, then some of the As must be B. For if none were, then no B would be A. But if some B is not A, there is no necessity that some of the As should not be B; e.g. let B stand for animal and A for man. Not every animal is a man; but every man is an animal.</p>
+      <p>Explains how logic can be applied to test primary premisses</p>
+    </section>
+  </article>
+</main>
+</body>
+</html>

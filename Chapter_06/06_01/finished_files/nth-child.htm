@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>nth-child syntax</title>
+<link href="_css/styles.css" rel="stylesheet" type="text/css">
+<style>
+.example table {
+	font-size: .9em;
+}
+.example tr:nth-child(odd) {
+	background: #F3ECDD;
+}
+.example td:nth-child(1), td:nth-child(2) {
+	width: 20%;
+}
+.example td:nth-child(1) {
+	font-style: italic;
+}
+.example td:nth-child(2) {
+	font-weight:bold;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>CSS Selectors</h1>
+  <h2>nth-Child Selectors</h2>
+</header>
+<main>
+  <table class="compatibility">
+    <caption>
+    Browser compatibility
+    </caption>
+    <tr>
+      <th class="chrome">Chrome</th>
+      <th class="mozilla">Firefox (Gecko)</th>
+      <th class="IE">Internet Explorer</th>
+      <th class="opera">Opera</th>
+      <th class="safari">Safari</th>
+    </tr>
+    <tr>
+      <td><span class="yes">1</span></td>
+      <td><span class="yes">3.5</span></td>
+      <td><span class="yes">9</span></td>
+      <td><span class="yes">9.5</span></td>
+      <td><span class="yes">3.1</span></td>
+    </tr>
+  </table>
+  <article class="summary">
+    <p>Matches elements based on keywords or patterns that are passed into the selector as an argument. In it&rsquo;s simplest form it matches elements based on the <strong>even</strong> or <strong>odd</strong> keywords, returning all odd or even numbered targeted elements. If a single value is passed into the selector that specific element is returned if it exists. For example the selector <strong>li:nth-child(3)</strong> would match the third list item in a list. It gets a little more complicated when you consider the pattern matching formula of <strong>(an + b)</strong>, where <strong>a</strong> is the number to match, <strong>n</strong> represents a repeating pattern, and <strong>b</strong> is a starting offset. The value <strong>(3n)</strong> would match every third item, starting from the third item and continuing (so 3, 6, 9, and so on). The value <strong>(3n + 2)</strong> would match every third item, <em>starting</em> with the second item (so 2, 5, 8, and so on). Some values are redundant,<strong> (2n + 2)</strong> would be the same as <strong>(2n)</strong>, for example. Negative values can be used for both <strong>a </strong>and <strong>b</strong> values, and can allow you to count backwards, but a match will be returned only if they result in a positive value. The value <strong>(-2n + 10)</strong> would start at 10 and count backwards by two, returning the 10th, 8th, 6th, 4th, and 2nd elements.</p>
+    <p>There are four variations to nth-child selectors; <strong>nth-child(n)</strong>, <strong>nth-last-child(n)</strong>, <strong>nth-of-type(n)</strong>, and <strong>nth-last-of-type(n)</strong>.</p>
+<h3>Syntax</h3>
+    <p>As a pseudo-class selector, nth-child selectors start with a colon (<strong>:</strong>), followed by the appropriate selector (<strong>nth-child</strong>), which is followed by a parentheses containing either a keyword (<strong>even</strong> or <strong>odd</strong>) or a <strong>pattern matching formula</strong>.</p>
+<figure>
+      <pre>
+<code>
+<span class="label">matching single ordinal:</span>
+<span class="selector">:nth-child(4)</span> {
+  color: red;
+    }
+
+<span class="label">matching keyword:</span>
+<span class="selector">:nth-child(odd)</span> {
+  color: red;
+    }
+    
+<span class="label">element specific:</span>
+<span class="selector">td:nth-child(even)</span> {
+  color: red;
+    } 
+    
+    </code></pre>
+      <figcaption>Basic nth-child selectors</figcaption>
+    </figure>
+  </article>
+  <article class="example">
+    <h3>Example:</h3>
+    <table>
+      <caption>
+        Favorite albums
+      </caption>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Artist</th>
+        <th scope="col">Comment</th>
+      </tr>
+      <tr>
+        <td>The Wall</td>
+        <td>Pink Floyd</td>
+        <td>One of the finest concept albums of all time.</td>
+      </tr>
+      <tr>
+        <td>OK Computer</td>
+        <td>Radiohead</td>
+        <td>Flawless. One of the rare albums that works together as a whole.</td>
+      </tr>
+      <tr>
+        <td>Angel Dust</td>
+        <td>Faith No More</td>
+        <td>Totally unconventional. Daring album that is smartly written and brilliantly executed.</td>
+      </tr>
+      <tr>
+        <td>Blues and Roots</td>
+        <td>Charles Mingus</td>
+        <td>An amazing mixture of jazz and blues from a modern master</td>
+      </tr>
+      <tr>
+        <td>Paul's Boutique</td>
+        <td>Beastie Boys</td>
+        <td>Dense, hyper-intellegent hip hop. The Beastie Boys defiantely released this misunderstood masterpiece rather than cash in on the success of <em>Liscense to Ill</em>.</td>
+      </tr>
+      <tr>
+        <td>Seasons in the Abyss</td>
+        <td>Slayer</td>
+        <td>Brutal but accessible. Refined aggression.</td>
+      </tr>
+      <tr>
+        <td>Emotionalism</td>
+        <td>Avett Brothers</td>
+        <td>Folk, rock, punk, country; all blended together with amazing lyrics and structure.</td>
+      </tr>
+      <tr>
+        <td>The Suburbs</td>
+        <td>Arcade Fire</td>
+        <td>Incredibly focused album and a powerful narrative of modern life.</td>
+      </tr>
+      <tr>
+        <td>Aenima</td>
+        <td>Tool</td>
+        <td>Rock/metal masterpiece as insightful as it is daring.</td>
+      </tr>
+    </table>
+  </article>
+</main>
+</body>
+</html>

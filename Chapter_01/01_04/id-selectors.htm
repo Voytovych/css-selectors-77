@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ID Selectors</title>
+<link href="_css/styles.css" rel="stylesheet" type="text/css">
+<style>
+/*styles go here*/
+
+</style>
+</head>
+<body>
+<header>
+<h1>CSS Selectors</h1>
+<h2>ID Selectors</h2>
+</header>
+<main>
+<table class="compatibility">
+<caption>Browser compatibility</caption>
+  <tr>
+   <th class="chrome">Chrome</th>
+   <th class="mozilla">Firefox (Gecko)</th>
+   <th class="IE">Internet Explorer</th>
+   <th class="opera">Opera</th>
+   <th class="safari">Safari</th>
+  </tr>
+  <tr>
+   <td><span class="yes">All</span></td>
+   <td><span class="yes">All</span></td>
+   <td><span class="yes">All</span></td>
+   <td><span class="yes">All</span></td>
+   <td><span class="yes">All</span></td>
+  </tr>
+</table>
+<article class="summary">
+<p>ID selectors allow you to target elements with a specific ID attributes. Because ID values may only be used once per page, ID selectors have a higher degree of specificity than class or element selectors. As such care should be taken when using ID selectors as heavy use of them can cause styling conflicts that are difficult to resolve, especially as stylesheets evolve and change over time.</p>
+<h3>Syntax</h3>
+<p>ID selectors are written using the octothorpe character (&lsquo;#&rsquo;) to precede the value of the ID attribute. To target an element with an ID attribute of &ldquo;special&rdquo; the selector would read <strong>#special</strong>. Note the lack of whitespace between the attribute value and the # symbol. You can make an ID selector element-specific by adding an element selector prior to the octothorpe character. <strong>h1#special</strong> would only match an H1 with the ID attribute of &ldquo;special.&rdquo; Although CSS is not case-sensitive, there are certain use-cases where the user agent may parse IDs with case sensitivity. Because of this it&rsquo;s a good practice to match the case of ID values.</p>
+<figure>
+  <pre>
+<code>
+<span class="selector">#special</span> {
+  color: red;
+    }
+    
+<span class="selector">h1#special</span> {
+  color: red;
+    }
+</code>
+</pre>
+  <figcaption>ID selector syntax</figcaption>
+</figure>
+</article>
+<article class="example">
+<h3>Example:</h3>
+<section id="overview">
+<h4>Targeting ID attributes</h4>
+<p>In this example I want to target specific ID attribute values. Note how the styling is applied regardless of element type. ID selectors are extremely specific, and will overwrite most selector types.</p>
+</section>
+<h4 id="strategy">Using ID selectors</h4>
+<p>Many designers avoid using ID selectors and discourage their use in projects due to their highly specific nature. ID selector styling is very hard to overwrite later, and generic interface styling can fail if dropped into a region being controlled through ID selectors. Still, ID selectors can play an important role in styling sites. You simply need to develop clear rules for when they are appropriate to use and how they might impact future styles.</p>
+</article>
+</main>
+</body>
+</html>

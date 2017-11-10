@@ -1,0 +1,234 @@
+/*
+In this challenge you’ll put what you’ve learned to the test by editing the existing styles of our exercise file in order to write more efficient selectors and overall more effective styles. There is no one “right” way to author or organize CSS, so although the goal is to complete the styles and make the existing ones more efficient, you should look at this exercise as more of a chance to experiment with your own approaches rather than try to match my finished files exactly.
+
+1. Find overly repetitious styles and group them when possible.
+2. Use inheritance to set the default font stack to Verdana, Geneva, sans-serif. Set the default size to 100% of the user agent’s default size.
+3. In the main article each advice section ends with a sample code snippet. Remove the comment around the placeholder rules below the existing article styles and write two selectors that add a border between each section except for the last one.
+4. Modularize the selectors for the article and aside so that the selectors aren’t tied to specific structures and can be reused on other pages regardless of page structure.
+5. Place quotation marks around the quoted text found in the blockquote. Use the CSS hex values \201C for the left quote \201D for the right quote.
+
+6. Find any unnecessarily long selectors and shorten them so that they aren’t as tied to specific depths and are resolved faster. 
+
+*/
+
+html {
+	background: #456644;
+	margin: 0;
+}
+/*limited reset*/
+h1, h2, h3, h4, h5, h6, p, blockquote, div {
+	margin: 0;
+	padding: 0;
+	margin-bottom: 1em;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, figure, footer, header, nav, section {
+display: block;
+}
+body {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 100%;
+	width: 80%;
+	margin: 0 auto 0;
+	padding: 2.5%;
+	background: white;
+	line-height: 1.8;
+}
+h2, h3, h4, h5, h6 {
+	font-size: 1em;
+	color: #97552C;
+	margin-bottom: 0;
+}
+h1 {
+	font-size: 1.6em;
+	margin-bottom: .4em;
+	color: #456644;
+}
+h2 {
+	font: 3.2em Georgia, "Times New Roman", Times, serif;
+	margin-bottom: .2em;
+	color: #97552C;
+}
+a {
+	color: #926A34;
+}
+a:hover {
+	color: #E2A643;
+}
+pre {
+	font-size: 1.4em;
+	color: white;
+	padding: .5em 1em;
+	border-left: 1em solid #A68048;
+	background: #666;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
+}
+.wrong {
+	border-left-color: red;
+}
+.correct {
+	border-left-color: green;
+}
+pre span {
+	color: #F9F;
+	background: none;
+}
+.label {
+	color: #FC0;
+}
+figcaption {
+	font-style: italic;
+}
+figure:last-of-type {
+	padding-bottom: 1em;
+	border-bottom: 1px solid #333;
+	margin-bottom: 1em;
+}
+section:last-of-type figure:last-of-type {
+	border: none;
+}
+table {
+	border: 1px solid black;
+	border-collapse: collapse;
+	margin-top: 1em;
+	background: #ECE3AA;
+}
+caption {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: rgb(107, 107, 132);
+	text-align: left;
+}
+tr:nth-child(odd) {
+	background: #F3ECDD;
+}
+td {
+	border: 1px solid black;
+	padding: .5em;
+}
+th {
+	border: 1px solid black;
+	border-bottom: 3px solid black;
+	height: 3em;
+	vertical-align: center;
+	background: #999;
+	color: white;
+}
+.compatibility {
+	float: right;
+}
+.compatibility th {
+	text-indent: -3000em;
+	font-size: 0px;
+	width: 50px;
+	height: 50px;
+}
+.compatibility td {
+	text-align: center;
+	background: #ccc;
+}
+.yes {
+	color: #390;
+}
+.no {
+	color: #F00;
+}
+.chrome {
+	background: url(../_images/chrome.png) no-repeat center;
+}
+.mozilla {
+	background: url(../_images/firefox.png) no-repeat center;
+}
+.IE {
+	background: url(../_images/ie.png) no-repeat center;
+}
+.opera {
+	background: url(../_images/opera.png) no-repeat center;
+}
+.safari {
+	background: url(../_images/safari.png) no-repeat center;
+}
+blockquote {
+	font: italic .9em/1.8 Georgia, Times, serif;
+	margin: 2em 0;
+	background: #F3ECDD;
+	padding: 1em;
+}
+blockquote span::before {
+	content: "\201C";
+}
+blockquote span::after {
+	content: "\201D";
+}
+cite {
+	display: block;
+	text-align:right;
+	font-weight: bold;
+}
+.summary {
+	float: left;
+	width: 65%;
+}
+.resources {
+	float: right;
+	width: 25%;
+	margin-top: 4em;
+}
+.resources section {
+	background: #ECE3AA;
+}
+.resources h3 {
+	margin:  0;
+	padding: .5em 0;
+	text-align: center;
+	background: #715125;
+	font-weight: normal;
+	color: white;
+}
+.resources ul, .resources li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.resources li:nth-child(even) {
+	background: #F3ECDD;
+}
+.resources a {
+	display: block;
+	text-decoration: none;
+	padding: .5em 1em;
+}
+.resources a:hover {
+	background: #926A34;
+	color: white;
+}
+footer {
+	clear: both;
+	text-align:center;
+	font-size: 0.9em;
+	color: #555;
+	padding-top: 1em;
+	border-top: 1px solid #555;
+}
+@media (max-width: 950px) {
+body {
+	width: 90%;
+	margin: 0 auto;
+}
+article {
+	width: 100%;
+}
+pre {
+	margin: 0 auto;
+	width: 100%;
+	padding: 2% 0 5%;
+}
+.compatibility, .resources, .summary {
+	float: none;
+	width: 100%;
+}
+}

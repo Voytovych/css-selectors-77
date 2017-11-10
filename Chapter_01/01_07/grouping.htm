@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Grouping Selectors</title>
+<link href="_css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+  <h1>CSS Selectors</h1>
+  <h2>Grouping Selectors</h2>
+</header>
+<main>
+  <table class="compatibility">
+    <caption>
+    Browser compatibility
+    </caption>
+    <tr>
+      <th class="chrome">Chrome</th>
+      <th class="mozilla">Firefox (Gecko)</th>
+      <th class="IE">Internet Explorer</th>
+      <th class="opera">Opera</th>
+      <th class="safari">Safari</th>
+    </tr>
+    <tr>
+      <td><span class="yes">All</span></td>
+      <td><span class="yes">All</span></td>
+      <td><span class="yes">All</span></td>
+      <td><span class="yes">All</span></td>
+      <td><span class="yes">All</span></td>
+    </tr>
+  </table>
+  <article class="summary">
+    <p>To create more efficient stylesheets, you can group selectors together that share the same formatting using a comma-separated list of selectors. If, for example, all of your headings were the same font and color, you could create a single grouped selector to style them rather than six individual selectors. Any selector type can be grouped together, and there is no limit to the amount of selectors that can be grouped together. </p>
+<h3>Syntax</h3>
+    <p>Selectors are grouped together by writing a comma-separated list of selectors, followed by a normal rule declaration block. The order that the selectors appear in does not matter, except for your own organization. Each selector in the group has its own specificity and is treated as a separate selector in the cascade.</p>
+<figure>
+      <pre>
+<code>
+<span class="selector">h1, h2, h3, .warning, div em</span> {
+  color: red;
+    }<span class="selector"></span>
+</code></pre>
+      <figcaption>Grouping selectors </figcaption>
+    </figure>
+  </article>
+</main>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Defining Focus</title>
+<link href="_css/styles.css" rel="stylesheet" type="text/css">
+<style>
+/*Styles go here*/
+
+</style>
+</head>
+<body>
+<header>
+  <h1>CSS Selectors</h1>
+  <h2>Defining Focus</h2>
+</header>
+<main>
+  <table class="compatibility">
+    <caption>
+    Browser compatibility
+    </caption>
+    <tr>
+      <th class="chrome">Chrome</th>
+      <th class="mozilla">Firefox (Gecko)</th>
+      <th class="IE">Internet Explorer</th>
+      <th class="opera">Opera</th>
+      <th class="safari">Safari</th>
+    </tr>
+    <tr>
+      <td><span class="yes">1.0</span></td>
+      <td><span class="yes">1.0</span></td>
+      <td><span class="yes">8</span></td>
+      <td><span class="yes">7</span></td>
+      <td><span class="yes">1.0</span></td>
+    </tr>
+  </table>
+  <article class="summary">
+    <p>Matches an element when that element accepts focus from the user. Can be element-specific, or styled globally if no element is defined. A common technique in CSS resets is to set the <strong>outline</strong> property of all elements to 0 using focus, thereby eliminating the user agent&rsquo;s default outline around focused elements. This practice is harmful to usability. If default outline styling is removed, it should be replaced with an equally noticeable style, as some users rely on this styling for interaction.</p>
+<h3>Syntax</h3>
+    <p>To write a focus selector that is element specific, start with the desired element (which can contain class, IDs, or even attribute selectors), and follow that with a colon (<strong>:</strong>) and then <strong>focus</strong>, with no whitespace. The selector <strong>:focus</strong> would apply to all elements.</p>
+<figure>
+      <pre>
+<code>
+<span class="selector">input:focus</span> {
+  border: 1px solid red;
+    }    
+    
+</code></pre>
+      <figcaption>Defining focus</figcaption>
+    </figure>
+  </article>
+  <article class="example">
+    <h3>Example:</h3>
+    <section>
+      <h4>Defining focus</h4>
+      <p class="edit">The focus selector is available for any element that can accept user focus. Traditionally that has been limited to links and other UI elements, but HTML5 allows us to broaden element types.</p>
+      <p>Focus styling is often modified for links. <a href="#">link 1</a>, <a href="#">link2</a>, having these multiple links will allow us to examine focus styling in detail <a href="#top">link 3</a>, and  <a href="#">link 4</a>.</p>
+      <h4 class="tip">Focus and form elements:</h4>
+      <p>&nbsp;</p>
+      <form id="focusForm" name="focusForm" method="post">
+        <fieldset>
+          <legend>Personal info</legend>
+        <ul>
+          <li>
+              <label for="name">Name:</label>
+              <input type="text" id="name">
+          </li>
+          <li>
+              <label for="email">Email:</label>
+              <input type="email" id="email">
+          </li>
+          <li>
+              <label for="occupation">Occupation:</label>
+              <input type="text" id="occupation">
+          </li>
+          <li>
+              <label for="comments">Comments:</label>
+              <textarea id="comments"></textarea>
+          </li>
+          <li>
+              <input name="submit" type="button" id="submit" form="focusForm" value="send">
+          </li>
+        </ul>
+          </fieldset>
+      </form>
+    </section>
+  </article>
+</main>
+</body>
+</html>

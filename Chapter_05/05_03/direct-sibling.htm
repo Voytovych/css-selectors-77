@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Targeting Adjacent Siblings</title>
+<link href="_css/styles.css" rel="stylesheet" type="text/css">
+<style>
+.example {
+	font: 1.2em Georgia, Times, serif;
+	line-height:1.4;
+}
+.example aside {
+	font: 1em Verdana, Helvetica, sans-serif;
+	background: #E8E6B8;
+	padding: 1em;
+	width: 30em;
+	margin: 1em;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>CSS Selectors</h1>
+  <h2>Targeting Adjacent Siblings</h2>
+</header>
+<main>
+  <table class="compatibility">
+    <caption>
+    Browser compatibility
+    </caption>
+    <tr>
+      <th class="chrome">Chrome</th>
+      <th class="mozilla">Firefox (Gecko)</th>
+      <th class="IE">Internet Explorer</th>
+      <th class="opera">Opera</th>
+      <th class="safari">Safari</th>
+    </tr>
+    <tr>
+      <td><span class="yes">1</span></td>
+      <td><span class="yes">1</span></td>
+      <td><span class="yes">7</span></td>
+      <td><span class="yes">9</span></td>
+      <td><span class="yes">3</span></td>
+    </tr>
+  </table>
+  <article class="summary">
+    <p>Returns a match only if the targeted element is immediately preceded by the referenced element. The adjacent sibling combinator is represented by the &ldquo;plus&rdquo; symbol (<strong>+</strong>) and is used to separate two simple selectors. The right-most selector is the target element and any other referenced selectors must immediately before the target element with no other content between them.</p>
+    <h3>Syntax</h3>
+    <p>A combination of simple selectors separated by a &ldquo;plus&rdquo; symbol (+). Whitespace between selectors and the adjacent sibling combinator is optional, but typical for readability. May be combined with descendent selectors or chained to define multiple siblings.<br clear="ALL">
+    </p>
+    <figure>
+      <pre>
+<code>
+<span class="selector">h1 + p</span> {
+  color: red;
+    }
+
+<span class="selector">article h1 + h2</span> {
+  color: red;
+    }
+    <span class="selector"></span></code></pre>
+      <figcaption>Adjacent sibling combinators</figcaption>
+    </figure>
+  </article>
+  <article class="example">
+    <h3>Example:</h3>
+      <section>
+      <h3>Article Heading</h3>
+      <p class="byline">Author name</p>
+      <p>When the objects of an inquiry, in any department, have principles, conditions, or elements, it is through acquaintance with these that knowledge, that is to say scientific knowledge, is attained. For we do not think that we know a thing until we are acquainted with its primary conditions or first principles, and have carried our analysis as far as its simplest elements. Plainly therefore in the science of Nature, as in other branches of study, our first task will be to try to determine what relates to its principles. </p>
+      <p>The natural way of doing this is to start from the things which are more knowable and obvious to us and proceed towards those which are clearer and more knowable by nature; for the same things are not 'knowable relatively to us' and 'knowable' without qualification. So in the present inquiry we must follow this method and advance from what is more obscure by nature, but clearer to us, towards what is more clear and more knowable by nature. </p>
+      <aside>
+      <h4>Related material</h4>
+      <p>Interesting facts, previous article related to subject or author, links to related content, or other related content. Must be short, one paragraph. Use an h3 for related content and an h4 for author related content.</p>
+      </aside>
+      <h4>Subhead</h4>
+      <p>Now what is to us plain and obvious at first is rather confused masses, the elements and principles of which become known to us later by analysis. Thus we must advance from generalities to particulars; for it is a whole that is best known to sense-perception, and a generality is a kind of whole, comprehending many things within it, like parts. Much the same thing happens in the relation of the name to the formula. A name, e.g. 'round', means vaguely a sort of whole: its definition analyses this into its particular senses. Similarly a child begins by calling all men 'father', and all women 'mother', but later on distinguishes each of them. </p>
+    </section>
+  </article>
+</main>
+</body>
+</html>

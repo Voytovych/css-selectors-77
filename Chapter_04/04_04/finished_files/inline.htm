@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Targeting Inline Content</title>
+<link href="_css/styles.css" rel="stylesheet" type="text/css">
+<style>
+p.first:first-line {
+	font: 1.2em Georgia, Times, serif;
+	text-transform: uppercase;
+	line-height:.8;
+}
+p.first:first-letter {
+	font: 4em Georgia, Times, serif;
+	color: #97552C;
+	float: left;
+	padding: .1em .1em 0 0;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>CSS Selectors</h1>
+  <h2>Targeting Inline Content</h2>
+</header>
+<main>
+  <table class="compatibility">
+    <caption>
+    Browser compatibility
+    </caption>
+    <tr>
+      <th class="chrome">Chrome</th>
+      <th class="mozilla">Firefox (Gecko)</th>
+      <th class="IE">Internet Explorer</th>
+      <th class="opera">Opera</th>
+      <th class="safari">Safari</th>
+    </tr>
+    <tr>
+      <td><span class="yes">1</span></td>
+      <td><span class="yes">1.0</span></td>
+      <td><span class="yes">5.5</span></td>
+      <td><span class="yes">3.5</span></td>
+      <td><span class="yes">1</span></td>
+    </tr>
+  </table>
+  <article class="summary">
+    <p>Matches the first letter and first formatted line of content of an element. First letter will match if it&rsquo;s the first letter of a block of content, and not preceded by another element or other content. First line is not defined by punctuation; rather it&rsquo;s the result of multiple factors like the width of the element or font-size. In both cases the target element must have a display value of <strong>block</strong>, <strong>inline-block</strong>, <strong>table-cell</strong>, or <strong>table-caption</strong> to return a match. First line is limited to font properties, color, background, and related text properties for styling purposes. First letter is subject to the same restrictions but also allows margin and padding properties.</p>
+<h3>Syntax</h3>
+    <p>As a structural pseudo-class elements, <strong>first-letter</strong> and <strong>first-line</strong> is preceded by two colons (<strong>::</strong>). To make either element specific, you can place a simple selector prior to the colons with no whitespace. The double colon syntax was added to the CSS Selectors Level 3 specfication as a way to distinguish pseudo-element selectors from pseudo-class selectors. Many designers still use the single colon syntax as a way to be backwards compatible with older browsers. There is no penalty for using the older syntax.</p>
+    <figure>
+      <pre>
+<code>
+
+<span class="selector">::first-letter</span> {
+  color: red;
+    }
+
+<span class="selector">p::first-letter</span> {
+  color: red;
+    }
+    
+<span class="selector">::first-line</span> {
+  color: red;
+    }
+
+<span class="selector">p::first-line</span> {
+  color: red;
+    }  
+ 
+</code></pre>
+      <figcaption>First Line and First Letter selectors</figcaption>
+    </figure>
+  </article>
+  <article class="example">
+    <h3>Example:</h3>
+    <section>
+      <p class="first">When the objects of an inquiry, in any department, have principles, conditions, or elements, it is through acquaintance with these that knowledge, that is to say scientific knowledge, is attained. For we do not think that we know a thing until we are acquainted with its primary conditions or first principles, and have carried our analysis as far as its simplest elements. Plainly therefore in the science of Nature, as in other branches of study, our first task will be to try to determine what relates to its principles. </p>
+      <p>The natural way of doing this is to start from the things which are more knowable and obvious to us and proceed towards those which are clearer and more knowable by nature; for the same things are not 'knowable relatively to us' and 'knowable' without qualification. So in the present inquiry we must follow this method and advance from what is more obscure by nature, but clearer to us, towards what is more clear and more knowable by nature. </p>
+      <p>Now what is to us plain and obvious at first is rather confused masses, the elements and principles of which become known to us later by analysis. Thus we must advance from generalities to particulars; for it is a whole that is best known to sense-perception, and a generality is a kind of whole, comprehending many things within it, like parts. Much the same thing happens in the relation of the name to the formula. A name, e.g. 'round', means vaguely a sort of whole: its definition analyses this into its particular senses. Similarly a child begins by calling all men 'father', and all women 'mother', but later on distinguishes each of them. </p>
+    </section>
+  </article>
+</main>
+</body>
+</html>

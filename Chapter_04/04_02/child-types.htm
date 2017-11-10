@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Child of Type Selectors</title>
+<link href="_css/styles.css" rel="stylesheet" type="text/css">
+<style>
+/*styles go here*/
+</style>
+</head>
+<body>
+<header>
+  <h1>CSS Selectors</h1>
+  <h2>Child of Type Selectors</h2>
+</header>
+<main>
+  <table class="compatibility">
+    <caption>
+    Browser compatibility
+    </caption>
+    <tr>
+      <th class="chrome">Chrome</th>
+      <th class="mozilla">Firefox (Gecko)</th>
+      <th class="IE">Internet Explorer</th>
+      <th class="opera">Opera</th>
+      <th class="safari">Safari</th>
+    </tr>
+    <tr>
+      <td><span class="yes">1</span></td>
+      <td><span class="yes">3.5</span></td>
+      <td><span class="yes">9</span></td>
+      <td><span class="yes">9.5</span></td>
+      <td><span class="yes">3.2</span></td>
+    </tr>
+  </table>
+  <article class="summary">
+    <p>The structural pseudo-class selectors <strong>:first-of-type</strong>, <strong>:last-of-type</strong>, and <strong>:only-of-type</strong> match elements when they are the first, last, or only elements of their type within a parent element. A literal match is not required, they simply need to be the first, last, or only element of that type within a parent. The selector p:first-of-type will match the first paragraph within a parent, regardless of other elements that precede it.</p>
+<h3>Syntax</h3>
+    <p>As a structural pseudo-class selector, <strong>first-of-type</strong>, <strong>last-of-type</strong>, and <strong>only-of-type</strong> is preceded by a colon (<strong>:</strong>). To make any of the selectors element specific, you can place a simple selector prior to the colon with no whitespace.</p>
+    <figure>
+      <pre>
+<code>
+<span class="selector">:first-of-type</span> {
+  color: red;
+    }
+
+<span class="selector">li:first-of-type</span> {
+  color: red;
+    }
+    
+<span class="selector">:last-of-type</span> {
+  color: red;
+    }
+
+<span class="selector">li:last-of-type</span> {
+  color: red;
+    }  
+
+<span class="selector">:only-of-type</span> {
+  color: red;
+    }
+
+<span class="selector">li:only-of-type</span> {
+  color: red;
+    }
+    
+</code></pre>
+      <figcaption>Child selectors</figcaption>
+    </figure>
+  </article>
+  <article class="example">
+    <h3>Example:</h3>
+    <section>
+      <h4>Targeting child selectors</h4>
+      <p>The structural pseudo-class child-of-type selectors allow you to target the occurances of specific elements without regard to other content within the parent. This paragraph, for example, is neither the first, last, or only child of the section, but would match <strong>first-of-type</strong> and <strong>only-of-type</strong> because it is the first and only paragraph. It's important to note that only direct children are targeted.</p>
+      <article>
+        <p>This paragraph is the first child of a new article</p>
+        <p>This paragraph is the last paragraph of an article</p>
+        <blockquote>However, this blockquote is the actual last element.</blockquote>
+      </article>
+      <article>
+        <p>This paragraph is the first child inside an article, it's also the only paragraph.That also makes it the last-of-type and only-of-type. Keep in mind that often all three will match an element.</p>
+        <h4>Tips</h4>
+        <ul>
+        <li>Plan carefully to avoid possible conflicts</li>
+        <li>Knowing page structure is crucial</li>
+        <li>Understand that an element may match all three selectors</li>
+        </ul>
+      </article>
+    </section>
+  </article>
+</main>
+</body>
+</html>

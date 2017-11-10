@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Efficient Selectors</title>
+<link href="_css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header id="pageHeader" role="banner">
+  <h1>CSS Selectors</h1>
+  <h2>Writing efficient selectors</h2>
+</header>
+<main id="mainContent" role="main">
+  <table class="compatibility">
+    <caption>
+    Browser compatibility
+    </caption>
+    <tr>
+      <th class="chrome">Chrome</th>
+      <th class="mozilla">Firefox (Gecko)</th>
+      <th class="IE">Internet Explorer</th>
+      <th class="opera">Opera</th>
+      <th class="safari">Safari</th>
+    </tr>
+    <tr>
+      <td><span class="yes">-</span></td>
+      <td><span class="yes">-</span></td>
+      <td><span class="yes">-</span></td>
+      <td><span class="yes">-</span></td>
+      <td><span class="yes">-</span></td>
+    </tr>
+  </table>
+  <article class="summary">
+    <p>Writing efficient selectors goes far beyond just using the shortest selector possible. The selectors in your stylesheets work together to form a cohesive whole, and without a guiding strategy you&rsquo;ll end up using more selectors than you need and in a form that doesn&rsquo;t reflect the goals of your project. Authoring selectors should be guided more by the organizational goals of the site than by any perceived performance optimization strategy. While you should always strive to write the most efficient selectors possible, it&rsquo;s far more important to author styles that are easy to maintain and extend.</p>
+    <section>
+      <h3>Use inheritance</h3>
+      <p>Rather than defining the same property multiple times, take advantage of inheritance to pass properties down to child elements. This will result in fewer selectors and more efficient styles.</p>
+      <figure>
+        <pre class="wrong">
+<code><span class="label">Unnecessary rules</span>
+<span class="selector">h1</span> { font-family: &quot;Arial&quot;; }
+<span class="selector">h2</span> { font-family: &quot;Arial&quot;; }
+<span class="selector">h3</span> { font-family: &quot;Arial&quot;; }
+<span class="selector">p</span> { font-family: &quot;Arial&quot;; }</code></pre>
+      </figure>
+      <figure>
+        <pre class="correct">
+<code><span class="label">Using inheritance </span><span class="selector">
+body</span> { font-family: &quot;Arial&quot;; }</code></pre>
+      </figure>
+    </section>
+    <section>
+      <h3>Group when possible</h3>
+      <p>If there are multiple rules that share styling, group them together into a single rule. This will reduce code bloat and make it easier to update styles.</p>
+      <figure>
+        <pre class="wrong">
+<code><span class="label">Multiple rules</span>
+<span class="selector">h1</span> {color: red; font-weight: normal;}
+<span class="selector">h2</span> { color: red; font-weight: normal;}
+<span class="selector">h3</span> { color: red; font-weight: normal;}
+</code></pre>
+      </figure>
+      <figure>
+        <pre class="correct">
+<code><span class="label">Grouped</span>
+<span class="selector">h1, h2, h3</span>  {color: red; font-weight: normal;}</code></pre>
+      </figure>
+    </section>
+    <section>
+      <h3>Reduce depth</h3>
+      <p>Longer descendent selectors are more expensive to parse, and result in styles that are too closely tied to a specific structure. Keeping selectors as short as possible without causing styling conflicts should be the goal of every stylesheet.</p>
+      <figure>
+        <pre class="wrong">
+<code><span class="label">Unnecessarily descriptive</span>
+<span class="selector">main article.support p em</span> {
+  color: red;
+    }
+</code></pre>
+      </figure>
+      <figure>
+        <pre class="correct">
+<code><span class="label">Sufficient depth</span>
+<span class="selector">.support em</span> {
+  color: red;
+    }
+</code></pre>
+      </figure>
+    </section>
+    <section>
+      <h3>Modularize with classes</h3>
+      <p>If you need to reuse styles, have multiple authors, or if the project is a large site with a high degree of maintenance and content updates consider modularizing styles with classes. For example if you have a search feature built in, don&rsquo;t rely on the structure of the page alone to write the selectors. Consider using a class which can be reused on other projects or injected into other regions of the site without needing additional styling.</p>
+      <figure>
+        <pre class="wrong">
+<code><span class="label">Tied to page structure</span>
+<span class="selector">nav aside input[type=&quot;search&quot;]</span> {
+  ...
+    }
+</code></pre>
+      </figure>
+      <figure>
+        <pre class="correct">
+<code><span class="label">Modularized</span>
+<span class="selector">.search input</span> {
+  ...
+    }
+</code></pre>
+      </figure>
+    </section>
+  </article>
+  <aside class="resources">
+    <section>
+      <h3>CSS resources</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/css3-selectors/" title="Selectors Level 3">CSS Selectors Level 3</a></li>
+        <li><a href="http://www.w3.org/Style/CSS/current-work.en.html" title="CSS Current Work">CSS Current Work</a></li>
+        <li><a href="https://css-tricks.com/" title="CSS Tricks">CSS Tricks</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" title="Mozilla Dev Network">MDN CSS Resource</a></li>
+        <li><a href="https://docs.webplatform.org/wiki/css" title="Web Platform">Web Platform CSS Resource</a></li>
+        <li><a href="http://www.css3.info/" title="CSS 3 Info">CSS3.info</a></li>
+      </ul>
+    </section>
+    <blockquote><span class="quote">It is practically impossible to predict the final performance impact of a given selector by just examining the selectors. In the engine, selectors are reordered, split, collected and compiled. To know the final performance of a given selectors, you would have to know in which bucket the selector was collected, how it is compiled, and finally what does the DOM tree looks like.</span> <cite>-Benjamin Poulain, WebKit Engineer</cite></blockquote>
+  </aside>
+</main>
+<footer> From the <a href="http://www.lynda.com" title="lynda.com">lynda.com</a> course <em>CSS: Selectors</em> by James Williamson | Follow <a href="https://twitter.com/lynda" title="lynda.com on Twitter">lynda.com</a> and author <a href="https://twitter.com/jameswillweb" title="James Williamson on Twitter">James Williamson</a> on Twitter!</footer>
+</body>
+</html>

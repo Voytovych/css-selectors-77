@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Universal Selector</title>
+<link href="_css/styles.css" rel="stylesheet" type="text/css">
+<style>
+/*Styles go here*/
+section * p {
+	color: red;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>CSS Selectors</h1>
+  <h2>Universal Selector</h2>
+</header>
+<main>
+  <table class="compatibility">
+    <caption>
+    Browser compatibility
+    </caption>
+    <tr>
+      <th class="chrome">Chrome</th>
+      <th class="mozilla">Firefox (Gecko)</th>
+      <th class="IE">Internet Explorer</th>
+      <th class="opera">Opera</th>
+      <th class="safari">Safari</th>
+    </tr>
+    <tr>
+      <td><span class="yes">All</span></td>
+      <td><span class="yes">All</span></td>
+      <td><span class="yes">All</span></td>
+      <td><span class="yes">All</span></td>
+      <td><span class="yes">All</span></td>
+    </tr>
+  </table>
+  <article class="summary">
+    <p>Matches all element types in the current document. While sometimes referred to as the &rdquo;wildcard&rdquo; selector, this term is not entirely accurate. The universal selector matches all element types, regardless of structure. While useful, care must be taken when using the universal selector in that it can unintentionally overwrite inheritance in styles, and it can negatively impact browser performance if overused.</p>
+<h3>Syntax</h3>
+    <p>To write a universal selector simply use the asterisk (*) character. It can be combined with other selectors in descendent selectors as well. </p>
+<figure>
+      <pre>
+<code>
+<span class="selector">*</span> {
+  color: red;
+    }
+    
+<span class="selector">div * em</span> {
+  color: red;
+    }
+</code>
+</pre>
+      <figcaption>Universal selector syntax</figcaption>
+    </figure>
+  </article>
+  <article class="example">
+    <h3>Example:</h3>
+    <section>
+      <h4>The universal selector</h4>
+      <p>Universal selectors are typically used to quickly apply global default values to all elements, such as a quick CSS reset or box-sizing properties. They can be combined with other selectors for specific targeting purposes as well.</p>
+      <article>
+      <p>Paragraph copy</p>
+      </article>
+      <aside>
+      <p>Paragraph copy <a href="#">with link</a></p>
+      </aside>
+    </section>
+  </article>
+</main>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Targeting General Siblings</title>
+<link href="_css/styles.css" rel="stylesheet" type="text/css">
+<style>
+/*styles go here*/
+</style>
+</head>
+<body>
+<header>
+  <h1>CSS Selectors</h1>
+  <h2>Targeting General Siblings</h2>
+</header>
+<main>
+  <table class="compatibility">
+    <caption>
+    Browser compatibility
+    </caption>
+    <tr>
+      <th class="chrome">Chrome</th>
+      <th class="mozilla">Firefox (Gecko)</th>
+      <th class="IE">Internet Explorer</th>
+      <th class="opera">Opera</th>
+      <th class="safari">Safari</th>
+    </tr>
+    <tr>
+      <td><span class="yes">1</span></td>
+      <td><span class="yes">1</span></td>
+      <td><span class="yes">7</span></td>
+      <td><span class="yes">9</span></td>
+      <td><span class="yes">3</span></td>
+    </tr>
+  </table>
+  <article class="summary">
+    <p>Matches elements that are siblings of a referenced element. The general sibling combinator is represented by the &ldquo;tilde&rdquo; character (<strong>~</strong>) and is used to separate two simple selectors. The right-most selector is the target element and any other referenced selectors must be siblings within the same parent to return a match.</p>
+    <h3>Syntax</h3>
+    <p>A combination of simple selectors separated by a &ldquo;tilde&rdquo; character (~). Whitespace between selectors and the general sibling combinator is optional, but typical for readability. May be combined with descendent selectors or chained to define multiple siblings.<br clear="ALL">
+    </p>
+    <figure>
+      <pre>
+<code>
+<span class="selector">h1 ~ p</span> {
+  color: red;
+    }
+
+<span class="selector">article h2 ~ blockquote</span> {
+  color: red;
+    }
+    <span class="selector"></span></code></pre>
+      <figcaption>General sibling combinators</figcaption>
+    </figure>
+  </article>
+  <article class="example">
+    <h3>Example:</h3>
+    <section>
+      <h4>H4 inside section</h4>
+      <p>Paragraph inside section</p>
+      <p>Paragraph inside section</p>
+      <aside>
+        <h4>H4 inside nested aside</h4>
+        <p>Paragraph inside nested aside</p>
+      </aside>
+    </section>
+    <section>
+      <h4>H4 inside section</h4>
+      <p>Paragraph inside section</p>
+      <blockquote>Blockquote inside section</blockquote>
+      <p>Paragraph inside section</p>
+    </section>
+  </article>
+</main>
+</body>
+</html>

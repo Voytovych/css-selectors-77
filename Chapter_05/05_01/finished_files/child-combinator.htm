@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Child Combinators</title>
+<link href="_css/styles.css" rel="stylesheet" type="text/css">
+<style>
+section > p {
+	color:red;
+}
+article > p > span {
+	color: green;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>CSS Selectors</h1>
+  <h2>Child Combinators</h2>
+</header>
+<main>
+  <table class="compatibility">
+    <caption>
+    Browser compatibility
+    </caption>
+    <tr>
+      <th class="chrome">Chrome</th>
+      <th class="mozilla">Firefox (Gecko)</th>
+      <th class="IE">Internet Explorer</th>
+      <th class="opera">Opera</th>
+      <th class="safari">Safari</th>
+    </tr>
+    <tr>
+      <td><span class="yes">ALL</span></td>
+      <td><span class="yes">ALL</span></td>
+      <td><span class="yes">7</span></td>
+      <td><span class="yes">ALL</span></td>
+      <td><span class="yes">ALL</span></td>
+    </tr>
+  </table>
+  <article class="summary">
+    <p>Matches elements that are direct children of the specified parent. The child combinator is represented by the &ldquo;greater-than&rdquo; sign (&gt;) and is used to separate two simple selectors. The right-most selector is the child target and the left-most selector is the direct parent. Unlike descendent selectors, which target any descendent of a parent no matter how deeply nested, the child combinator only targets the direct children of the parent. </p>
+<h3>Syntax</h3>
+    <p>A combination of simple selectors separated by a &ldquo;greater than&rdquo; sign (&gt;). Whitespace between selectors and the child combinator is optional, but typical for readability. May be combined with descendent selectors or chained to define multiple levels of parent to child relationships.</p>
+<figure>
+      <pre>
+<code>
+<span class="selector">article &gt; p</span> {
+  color: red;
+    }
+
+<span class="selector">article &gt; section &gt; h2</span> {
+  color: red;
+    }
+    <span class="selector"></span></code></pre>
+      <figcaption>Child combinators</figcaption>
+    </figure>
+  </article>
+  <article class="example">
+    <h3>Example:</h3>
+    <section>
+    <h4>H4 inside section</h4>
+    <p>Paragraph inside section</p>
+    <p>Paragraph inside section <span>-span text-</span></p>
+    <article>
+    <h4>H4 inside nested article</h4>
+    <p>Paragraph inside nested article <span>-span text-</span></p>
+    </article>
+    </section>
+  </article>
+</main>
+</body>
+</html>

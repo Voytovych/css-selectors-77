@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Descendent Selectors</title>
+<link href="_css/styles.css" rel="stylesheet" type="text/css">
+<style>
+/*Styles go here*/
+.example h3 {
+	font: 2em Georgia, Times, serif;
+	margin-bottom: 0.5em;
+}
+section em {
+	font-weight: bold;
+}
+aside em {
+	color: red;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>CSS Selectors</h1>
+  <h2>Descendent Selectors</h2>
+</header>
+<main>
+  <table class="compatibility">
+    <caption>
+    Browser compatibility
+    </caption>
+    <tr>
+      <th class="chrome">Chrome</th>
+      <th class="mozilla">Firefox (Gecko)</th>
+      <th class="IE">Internet Explorer</th>
+      <th class="opera">Opera</th>
+      <th class="safari">Safari</th>
+    </tr>
+    <tr>
+      <td><span class="yes">All</span></td>
+      <td><span class="yes">All</span></td>
+      <td><span class="yes">All</span></td>
+      <td><span class="yes">All</span></td>
+      <td><span class="yes">All</span></td>
+    </tr>
+  </table>
+  <article class="summary">
+    <p>Descendent selectors allow you to take advantage of the natural structure of HTML documents by targeting elements based on the relationship between child and ancestor tags. These selectors are essential a combination of multiple selectors that are strung together to indicate structure. The descendent selector <strong>div p</strong>, for example, would match any paragraph found inside a div element. It&rsquo;s important to note that the matching isn&rsquo;t restricted to direct children. The example given would match any paragraph inside a div, no matter how many other elements the paragraph may be nested in.</p>
+    <h3>Syntax</h3>
+    <p>Descendent selectors are created using a whitespace-separated string of selectors. Any selector type may be used in descendent selectors. The leftmost selector indicates a parent element followed by subsequent child elements. Each selector to the left of a selector is considered a parent, so in the case of <strong>article p span</strong> the selector would match any span element found within a paragraph that itself has an article tag as an ancestor. While there is no limit to the amount of selectors that can be used to create descendent selectors, any amount over three is generally considered to be inefficient. &nbsp;&nbsp;</p>
+    <figure>
+      <pre>
+<code>
+<span class="selector">div p</span> {
+  color: red;
+    }
+    
+<span class="selector">.summary p span.warning</span> {
+  color: red;
+    }
+</code>
+</pre>
+      <figcaption>Descendent selector syntax</figcaption>
+    </figure>
+  </article>
+  <article class="example">
+    <h3>Example:</h3>
+    <section>
+      <h4>Targeting nested elements</h4>
+      <p>Descendent selectors allow us to be much more precise in terms of where styling is applied. Using them allows us to style elements a certain way when found inside a specific element type and another way if found elsewhere. This allows us to create discreet areas of styling in an efficient manner. <em>It also makes it easy to create self-contained elements</em>, as class and ID attributes can be used to identify specific UI elements that are styled with a combination of descendent selectors.</p>
+      <aside>
+        <h4>Strategies for descendent selectors</h4>
+        <p>Because descendent selectors are tied directly to the structure of your HTML, it&rsquo;s difficult to plan any effective strategy for using them without first understanding how your site&rsquo;s content will be structured. The main focus of any strategy outlining the use of descendent selectors should be to strike a balance between specificity and modularity. You want your selectors to properly style the targeted area, but not to the detriment of adding styles later that may need to overwrite these base styles. </p>
+        <p>Also, care should be taken to write descendent selectors as efficiently as possible. <em>Any selector that requires over three selectors to construct can probably be rewritten in a more efficient manner</em>.</p>
+      </aside>
+    </section>
+  </article>
+</main>
+</body>
+</html>

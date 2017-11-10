@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Empty Elements</title>
+<link href="_css/styles.css" rel="stylesheet" type="text/css">
+<style>
+td:empty {
+	background: #ccc;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>CSS Selectors</h1>
+  <h2>Targeting Empty Elements</h2>
+</header>
+<main>
+  <table class="compatibility">
+    <caption>
+    Browser compatibility
+    </caption>
+    <tr>
+      <th class="chrome">Chrome</th>
+      <th class="mozilla">Firefox (Gecko)</th>
+      <th class="IE">Internet Explorer</th>
+      <th class="opera">Opera</th>
+      <th class="safari">Safari</th>
+    </tr>
+    <tr>
+      <td><span class="yes">1</span></td>
+      <td><span class="yes">3.5</span></td>
+      <td><span class="yes">9</span></td>
+      <td><span class="yes">9.5</span></td>
+      <td><span class="yes">3.2</span></td>
+    </tr>
+  </table>
+  <article class="summary">
+    <p>Matches elements that have no children, including other elements or text. Comments are ignored, although any amount of whitespace will negate a match.</p>
+    <h3>Syntax</h3>
+    <p>As a structural pseudo-class selector, <strong>empty </strong>is preceded by a colon (<strong>:</strong>). To make it element specific, you can place a simple selector prior to the colon with no whitespace.</p>
+    <figure>
+      <pre>
+<code>
+<span class="selector">:empty</span> {
+  border: 1px solid red;
+    }
+
+<span class="selector">td:empty</span> {
+  border: 1px solid red;
+    }
+   
+</code></pre>
+      <figcaption>Targeting empty elements</figcaption>
+    </figure>
+  </article>
+  <article class="example">
+    <h3>Example:</h3>
+    <section>
+      <h4>Targeting empty elements</h4>
+      <p>Below this paragraph is an empty paragraph. It will match <strong>:empty</strong> or not based on whether it contains whitespace or not.</p>
+      <p>
+      </p>
+      <h4>Targeting empty cells</h4>
+      <table class="example">
+        <caption>
+        Ping Pong Tournament win totals (head to head)
+        </caption>
+        <tr>
+          <th scope="col">Wins</th>
+          <th scope="col">Susan</th>
+          <th scope="col">Tom</th>
+          <th scope="col">Mary</th>
+        </tr>
+        <tr>
+          <th scope="row">Susan</th>
+          <td></td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <th scope="row">Tom</th>
+          <td>1</td>
+          <td></td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <th scope="row">Mary</th>
+          <td>0</td>
+          <td>1</td>
+          <td></td>
+        </tr>
+      </table>
+    </section>
+  </article>
+</main>
+</body>
+</html>

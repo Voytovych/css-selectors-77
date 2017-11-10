@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Class Selectors</title>
+<link href="_css/styles.css" rel="stylesheet" type="text/css">
+<style>
+/*styles go here*/
+.warning {
+	color: red;
+}
+</style>
+</head>
+<body>
+<header>
+<h1>CSS Selectors</h1>
+<h2>Class Selectors</h2>
+</header>
+<main>
+<table class="compatibility">
+<caption>Browser compatibility</caption>
+  <tr>
+   <th class="chrome">Chrome</th>
+   <th class="mozilla">Firefox (Gecko)</th>
+   <th class="IE">Internet Explorer</th>
+   <th class="opera">Opera</th>
+   <th class="safari">Safari</th>
+  </tr>
+  <tr>
+   <td><span class="yes">All</span></td>
+   <td><span class="yes">All</span></td>
+   <td><span class="yes">All</span></td>
+   <td><span class="yes">All</span></td>
+   <td><span class="yes">All</span></td>
+  </tr>
+</table>
+<article class="summary">
+<p>Class selectors match elements based on the contents of an element&rsquo;s class attribute. The class selector <strong>.author</strong>, for example, would match any HTML element with the class attribute of &ldquo;author.&rdquo; The specific nature of class selectors combined with the ability to apply class attributes to any element makes them an extremely powerful and flexible option for styling. Because they are so easy to use class selectors can occasionally be over-used, resulting in non-semantic code and code that is more difficult to maintain.</p>
+<h3>Syntax</h3>
+<p>Class selectors are written by adding a period (&lsquo;.&rsquo;) prior to the contents of the targeted attribute value, with no whitespace between the two. To make a class selector specific to an element type, add the element type prior to the period with no whitespace. The selector <strong>p.summary</strong> would match any paragraph with the class attribute of &ldquo;summary&rdquo;. Although CSS is not case-sensitive, there are certain use-cases where the styled document may parse classes with case sensitivity. Because of this it&rsquo;s a good practice to match the case of class values.</p>
+<figure>
+  <pre>
+<code>
+<span class="selector">.warning</span> {
+  color: red;
+    }
+    
+<span class="selector">h1.warning</span> {
+  color: red;
+    }
+</code>
+</pre>
+  <figcaption>Class selector syntax</figcaption>
+</figure>
+</article>
+<article class="example">
+<h3>Example:</h3>
+<h4>Targeting class attributes</h4>
+<p>In this example I want to target specific class attribute values. Note how the styling is applied regardless of element type. <em class="highlight">Class selectors are also more specific than element selectors</em>, so they allow us to overwrite the more general styles of element selectors.</p>
+<h4 class="highlight">Using class selectors</h4>
+<p>They also allow us to target very specific locations or instances by simply applying a <strong class="highlight">class attribute</strong>. This is a great way to write styles for specific purposes with a single selector and then apply it whenever needed by adding the appropriate class attribute.</p>
+<p>Care should be taken when using class selectors as overuse of them can bloat code and create stylesheets that are hard to maintain.</p>
+</article>
+</main>
+</body>
+</html>

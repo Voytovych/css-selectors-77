@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CSS Selectors</title>
+<link href="_css/styles.css" rel="stylesheet" type="text/css">
+<style>
+/*styles go here*/
+</style>
+</head>
+<body>
+<header>
+<h1>CSS Selectors</h1>
+<h2>Element Selectors</h2>
+</header>
+<main>
+<table class="compatibility">
+<caption>Browser compatibility</caption>
+  <tr>
+   <th class="chrome">Chrome</th>
+   <th class="mozilla">Firefox (Gecko)</th>
+   <th class="IE">Internet Explorer</th>
+   <th class="opera">Opera</th>
+   <th class="safari">Safari</th>
+  </tr>
+  <tr>
+   <td><span class="yes">All</span></td>
+   <td><span class="yes">All</span></td>
+   <td><span class="yes">All</span></td>
+   <td><span class="yes">All</span></td>
+   <td><span class="yes">All</span></td>
+  </tr>
+</table>
+<article class="summary">
+<p>Element selectors allow you to target matching HTML element types. They&rsquo;re a very broad, general selector that allows you to style large portions of content with a single selector. The selector &lsquo;p&rsquo;, for example, would match every paragraph in the corresponding document. This makes them extremely powerful and well suited for handling site-wide styling.</p>
+<h3>Syntax</h3>
+<p>To write an element selector, simply use the corresponding HTML element, minus the brackets. To target all Heading Ones, for example, you&rsquo;d simple write <strong>h1</strong> instead of <strong>&lt;h1&gt;</strong>. </p>
+<figure>
+  <pre>
+<code>
+<span class="selector">h1</span> {
+  color: red;
+    }
+</code>
+</pre>
+  <figcaption>Element selector syntax</figcaption>
+</figure>
+</article>
+<article class="example">
+<h3>Example:</h3>
+<p>This is a paragraph that contains <span>several span tags</span>. I'd like to style these span tags across my <span>entire site at once</span>, to establish a default  site-wide format for them. The most efficient selector for this would be the <span>element selector</span>, as it will allow me to establish a base-line format for the span tag with a <span>low degree of specificity</span>. This means that the formatting will be controlled throughout the entire site with a single selector, and it will be <span>easy to overwrite in specific instances</span> where I want the styling to change.</p>
+</article>
+</main>
+</body>
+</html>

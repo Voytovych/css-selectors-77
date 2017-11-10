@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Attribute Selectors</title>
+<link href="_css/styles.css" rel="stylesheet" type="text/css">
+<style>
+/*Styles go here*/
+
+</style>
+</head>
+<body>
+<header>
+  <h1>CSS Selectors</h1>
+  <h2>Attribute Selectors</h2>
+</header>
+<main>
+  <table class="compatibility">
+    <caption>
+    Browser compatibility
+    </caption>
+    <tr>
+      <th class="chrome">Chrome</th>
+      <th class="mozilla">Firefox (Gecko)</th>
+      <th class="IE">Internet Explorer</th>
+      <th class="opera">Opera</th>
+      <th class="safari">Safari</th>
+    </tr>
+    <tr>
+      <td><span class="yes">All</span></td>
+      <td><span class="yes">1.0</span></td>
+      <td><span class="yes">7</span></td>
+      <td><span class="yes">9</span></td>
+      <td><span class="yes">3</span></td>
+    </tr>
+  </table>
+  <article class="summary">
+    <p>Matches elements when the specified attribute is present. Variations on syntax allow you to target specific attribute values and include options for matching specific string values. While it&rsquo;s not necessary to preface the attribute value with a simple selector, doing so allows you to match specific element types with attribute values.</p>
+    <h3>String Matching Syntax</h3>
+    <p>Attribute selectors can also match partial string values inside attributes. By preceding the equals (<strong>=</strong>) sign with a caret (<strong>^</strong>) you&rsquo;ll match the attribute whose value is prefixed by the string. So the selector <strong>a[href^=&quot;http://&quot;]</strong> would match any link with an <strong>href</strong> value that began with the http protocol. To target a suffix value, you would add a dollar sign (<strong>$</strong>) prior to the equals (<strong>=</strong>) sign. In that case the selector <strong>a[href$=&quot;.pdf&quot;]</strong> would match any link with an <strong>href</strong> attribute ending in &ldquo;.pdf&rdquo;. To match a string anywhere in an attribute, you would add an asterisk (<strong>*</strong>) prior to the equals (<strong>=</strong>) sign. In that case the selector <strong>p[class*=&quot;book&quot;]</strong> would match any paragraph that contains and attribute with &ldquo;book&rdquo; anywhere in its value, returning matches for &ldquo;book&rdquo;, &ldquo;bookkeeper&rdquo;, &ldquo;new-book&rdquo;, and &ldquo;books&rdquo;. </p>
+<figure>
+      <pre>
+<code>
+<span class="label">matching prefix:</span>
+<span class="selector">a[href^="http://"]</span> {
+  color: red;
+    }
+
+<span class="label">matching suffix:</span>
+<span class="selector">a[href$=".pdf"]</span> {
+  color: red;
+    }
+    
+<span class="label">matching partial string:</span>
+<span class="selector">p[class*="book"]</span> {
+  color: red;
+    }    
+    
+</code></pre>
+      <figcaption>Attribute selectors: string matching</figcaption>
+    </figure>
+  </article>
+  <article class="example">
+    <h3>Example:</h3>
+    <section>
+      <h4>Attribute selectors</h4>
+      <p class="syntax">Basic attribute selector syntax allows you to target elements based on the presence of an attribute, regardless of the value.</p>
+      <p class="links syntax">Attribute selectors are especially helpful at styling links, allowing you to style <a href="links.htm" title="visit our helpful links">relative links</a>, <a href="http://www.lynda.com" title=" visit lynda.com">external links</a>, links to <a href="#top">page regions</a>, and links to <a href="resources/tips.pdf" title="helpful resources">resources</a> indivdually.</p>
+      <h4 class="tip">Options:</h4>
+      <ul>
+        <li class="tip-easy">You can match specific values</li>
+        <li class="tip-easy">You can match a specific value from a space-separated list</li>
+        <li class="tip-med">You can match a value's prefix</li>
+        <li class="tip-med">You can match a value's suffix</li>
+        <li class="tip-adv">You can match a value that contain's a specified string value</li>
+      </ul>
+    </section>
+  </article>
+</main>
+</body>
+</html>

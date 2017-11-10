@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Combining Selectors</title>
+<link href="_css/styles.css" rel="stylesheet" type="text/css">
+<style>
+h4:first-child:only-of-type {
+	font: 1.2em Georgia, Times, serif;
+	text-transform: uppercase;
+	color: #060;
+}
+p:not(:only-of-type):last-of-type::after {
+	content:'';
+	display: block;
+	height: 50px;
+	background: url(_images/ornament.png) no-repeat center;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>CSS Selectors</h1>
+  <h2>Combining Selectors</h2>
+</header>
+<main>
+  <table class="compatibility">
+    <caption>
+    Browser compatibility
+    </caption>
+    <tr>
+      <th class="chrome">Chrome</th>
+      <th class="mozilla">Firefox (Gecko)</th>
+      <th class="IE">Internet Explorer</th>
+      <th class="opera">Opera</th>
+      <th class="safari">Safari</th>
+    </tr>
+    <tr>
+      <td><span class="yes">ALL</span></td>
+      <td><span class="yes">ALL</span></td>
+      <td><span class="yes">ALL</span></td>
+      <td><span class="yes">ALL</span></td>
+      <td><span class="yes">ALL</span></td>
+    </tr>
+  </table>
+  <article class="summary">
+    <p>Pseudo-class selectors have the ability to be chained together into more complex selectors. When chained, each pseudo-class selector is considered when matching elements, so <strong>a:first-child:hover</strong> would match only links that are the first child of their parents while hovered. Pseudo-element selectors cannot be chained, but they can be the right-most selector in a chain, meaning <strong>p:only-of-type::first-line</strong> would be permitted.</p>
+<h3>Syntax</h3>
+    <p>To chain pseudo-class selectors, simply add additional pseudo-class selectors to each other without whitespace between them. It is worth noting that IDs and Classes can be chained in this manner as well.</p>
+<figure>
+      <pre>
+<code>
+<span class="selector">h4:last-child:first-of-type</span> {
+  color: red;
+    }
+
+<span class="selector">a.current:first-child:hover</span> {
+  color: red;
+    }
+    <span class="selector"></span></code></pre>
+      <figcaption>Combining selectors</figcaption>
+    </figure>
+  </article>
+  <article class="example">
+    <h3>Example:</h3>
+    <section>
+    <h4>Pattern 1: Excerpt</h4>
+      <p>When the objects of an inquiry, in any department, have principles, conditions, or elements, it is through acquaintance with these that knowledge, that is to say scientific knowledge, is attained. For we do not think that we know a thing until we are acquainted with its primary conditions or first principles, and have carried our analysis as far as its simplest elements. Plainly therefore in the science of Nature, as in other branches of study, our first task will be to try to determine what relates to its principles. </p>
+      </section>
+      <section>
+      <h3>Pattern 2: Spotlight</h3>
+      <h4>Subject heading</h4> 
+      <p>The natural way of doing this is to start from the things which are more knowable and obvious to us and proceed towards those which are clearer and more knowable by nature; for the same things are not 'knowable relatively to us' and 'knowable' without qualification. So in the present inquiry we must follow this method and advance from what is more obscure by nature, but clearer to us, towards what is more clear and more knowable by nature. </p>
+      </section>
+      <section>
+      <h4>Pattern 3: Article</h4>
+      <p>When the objects of an inquiry, in any department, have principles, conditions, or elements, it is through acquaintance with these that knowledge, that is to say scientific knowledge, is attained. For we do not think that we know a thing until we are acquainted with its primary conditions or first principles, and have carried our analysis as far as its simplest elements. Plainly therefore in the science of Nature, as in other branches of study, our first task will be to try to determine what relates to its principles. </p>
+      <h4>Subhead</h4>
+      <p>The natural way of doing this is to start from the things which are more knowable and obvious to us and proceed towards those which are clearer and more knowable by nature; for the same things are not 'knowable relatively to us' and 'knowable' without qualification. So in the present inquiry we must follow this method and advance from what is more obscure by nature, but clearer to us, towards what is more clear and more knowable by nature. </p>
+      <p>Now what is to us plain and obvious at first is rather confused masses, the elements and principles of which become known to us later by analysis. Thus we must advance from generalities to particulars; for it is a whole that is best known to sense-perception, and a generality is a kind of whole, comprehending many things within it, like parts. Much the same thing happens in the relation of the name to the formula. A name, e.g. 'round', means vaguely a sort of whole: its definition analyses this into its particular senses. Similarly a child begins by calling all men 'father', and all women 'mother', but later on distinguishes each of them. </p>
+    </section>
+  </article>
+</main>
+</body>
+</html>

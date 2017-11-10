@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>nth-child syntax</title>
+<link href="_css/styles.css" rel="stylesheet" type="text/css">
+<style>
+/* styles go here */
+</style>
+</head>
+<body>
+<header>
+  <h1>CSS Selectors</h1>
+  <h2>nth-Child Selectors</h2>
+</header>
+<main>
+  <table class="compatibility">
+    <caption>
+    Browser compatibility
+    </caption>
+    <tr>
+      <th class="chrome">Chrome</th>
+      <th class="mozilla">Firefox (Gecko)</th>
+      <th class="IE">Internet Explorer</th>
+      <th class="opera">Opera</th>
+      <th class="safari">Safari</th>
+    </tr>
+    <tr>
+      <td><span class="yes">1</span></td>
+      <td><span class="yes">3.5</span></td>
+      <td><span class="yes">9</span></td>
+      <td><span class="yes">9.5</span></td>
+      <td><span class="yes">3.1</span></td>
+    </tr>
+  </table>
+  <article class="summary">
+    <p>Matches elements based on keywords or patterns that are passed into the selector as an argument. In it&rsquo;s simplest form it matches elements based on the <strong>even</strong> or <strong>odd</strong> keywords, returning all odd or even numbered targeted elements. If a single value is passed into the selector that specific element is returned if it exists. For example the selector <strong>li:nth-child(3)</strong> would match the third list item in a list. It gets a little more complicated when you consider the pattern matching formula of <strong>(an + b)</strong>, where <strong>a</strong> is the number to match, <strong>n</strong> represents a repeating pattern, and <strong>b</strong> is a starting offset. The value <strong>(3n)</strong> would match every third item, starting from the third item and continuing (so 3, 6, 9, and so on). The value <strong>(3n + 2)</strong> would match every third item, <em>starting</em> with the second item (so 2, 5, 8, and so on). Some values are redundant,<strong> (2n + 2)</strong> would be the same as <strong>(2n)</strong>, for example. Negative values can be used for both <strong>a </strong>and <strong>b</strong> values, and can allow you to count backwards, but a match will be returned only if they result in a positive value. The value <strong>(-2n + 10)</strong> would start at 10 and count backwards by two, returning the 10th, 8th, 6th, 4th, and 2nd elements.</p>
+    <p>There are four variations to nth-child selectors; <strong>nth-child(n)</strong>, <strong>nth-last-child(n)</strong>, <strong>nth-of-type(n)</strong>, and <strong>nth-last-of-type(n)</strong>.</p>
+    <h3>Syntax</h3>
+    <p>As a pseudo-class selector, nth-child selectors start with a colon (<strong>:</strong>), followed by the appropriate selector (<strong>nth-child</strong>), which is followed by a parentheses containing either a keyword (<strong>even</strong> or <strong>odd</strong>) or a <strong>pattern matching formula</strong>.</p>
+    <figure>
+      <pre>
+<code>
+<span class="label">every 2nd item counting backwards from 10:</span>
+<span class="selector">:nth-child(-2n + 10)</span> {
+  color: red;
+    }
+
+<span class="label">matches last five items:</span>
+<span class="selector">:nth-last-child(-n + 5)</span> {
+  color: red;
+    }
+     </code></pre>
+      <figcaption>Counting backwards</figcaption>
+    </figure>
+  </article>
+  <article class="example">
+    <h3>Example:</h3>
+    <section>
+      <ul>
+        <li>Item 01</li>
+        <li>Item 02</li>
+        <li>Item 03</li>
+        <li>Item 04</li>
+        <li>Item 05</li>
+        <li>Item 06</li>
+        <li>Item 07</li>
+        <li>Item 08</li>
+        <li>Item 09</li>
+        <li>Item 10</li>
+      </ul>
+    </section>
+    <section>
+      <dl>
+        <dt>Term 01</dt>
+        <dd>Definition 01</dd>
+        <dt>Term 02</dt>
+        <dd>Definition 02</dd>
+        <dt>Term 02</dt>
+        <dd>Definition 02</dd>
+        <dd>Definition 02b</dd>
+        <dt>Term 03</dt>
+        <dd>Definition 03</dd>
+        <dt>Term 04</dt>
+        <dd>Definition 04</dd>
+        <dt>Term 05</dt>
+        <dd>Definition 05 </dd>
+      </dl>
+    </section>
+  </article>
+</main>
+</body>
+</html>

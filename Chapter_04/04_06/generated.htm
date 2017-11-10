@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Generated Content</title>
+<link href="_css/styles.css" rel="stylesheet" type="text/css">
+<style>
+/*Styles go here*/
+</style>
+</head>
+<body>
+<header>
+  <h1>CSS Selectors</h1>
+  <h2>Generated Content</h2>
+</header>
+<main>
+  <table class="compatibility">
+    <caption>
+    Browser compatibility
+    </caption>
+    <tr>
+      <th class="chrome">Chrome</th>
+      <th class="mozilla">Firefox (Gecko)</th>
+      <th class="IE">Internet Explorer</th>
+      <th class="opera">Opera</th>
+      <th class="safari">Safari</th>
+    </tr>
+    <tr>
+      <td><span class="yes">1</span></td>
+      <td><span class="yes">1.0</span></td>
+      <td><span class="yes">8</span></td>
+      <td><span class="yes">4</span></td>
+      <td><span class="yes">4</span></td>
+    </tr>
+  </table>
+  <article class="summary">
+    <p>The <strong>::before</strong> and <strong>::after </strong>pseudo-element selectors allow you to inject content before or after the contents of the targeted elements. You can think of this content as separate inline elements that can be styled independently of the existing element&rsquo;s content. To generate the content you must use the <strong>content</strong> property, which can accept strings, <strong>url()</strong> for images, counter values, and the attribute function <strong>attr()</strong> which returns the value of a specified attribute as a string value. Since the generated content can be styled independently, it&rsquo;s also acceptable to use a <strong>background-image</strong> rather than the<strong> url()</strong> function.</p>
+<h3>Syntax</h3>
+    <p>As a structural pseudo-element selectors, <strong>before</strong> and <strong>after</strong> is preceded by two colons (<strong>::</strong>). To make either element specific, you can place a simple selector prior to the colons with no whitespace. Within the rule declaration the <strong>content</strong> property must be present to generate content. The content property will accept <strong>string</strong> values in quotations, the <strong>url()</strong> function, the <strong>counter()</strong> function for numbering items like lists, and keywords like <strong>open-quote</strong> and <strong>close-quote</strong>. The double colon syntax was added to the CSS Selectors Level 3 specfication as a way to distinguish pseudo-element selectors from pseudo-class selectors. Many designers still use the single colon syntax as a way to be backwards compatible with older browsers. There is no penalty for using the older syntax.</p>
+    <figure>
+      <pre>
+<code>
+<span class="selector">p::before</span> {
+  content: &quot;hello&quot;;
+    }
+
+<span class="selector">p::after</span> {
+  content: &quot;hello&quot;;
+    }<span class="selector"></span>  
+ </code></pre>
+      <figcaption>Before and After selectors</figcaption>
+    </figure>
+  </article>
+  <article class="example">
+    <h3>Example:</h3>
+    <section>
+      <p class="tip">At first glance generated content might seem like a curious oddity rather than something you would use frequently. However, the ability to inject icons, phrases, tips, or extra data outside the DOM is quite powerful. By using classes with generated content, you can add complex styling and add meaning without modifying your existing markup.&nbsp;</p>
+      <p class="last">To learn more about generated content, visit the W3C&rsquo;s section on generated content in the <a href="http://www.w3.org/TR/CSS2/generate.html" title="CSS Specification">CSS 2.1 Specification</a>. Although fairly technical, this section covers generated content in detail and gives all the possible syntax values. Using generated content typically requires a good deal of practice before you are comfortable with it, so be sure to experiment with it before using it in production.</p>
+    </section>
+  </article>
+</main>
+</body>
+</html>

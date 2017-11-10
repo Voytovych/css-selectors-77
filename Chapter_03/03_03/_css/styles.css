@@ -1,0 +1,172 @@
+html {
+	background: #456644;
+	margin: 0;
+}
+/*limited reset*/
+h1, h2, h3, h4, h5, h6, p, blockquote, div {
+	margin: 0;
+	padding: 0;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, figure, footer, header, nav, section {
+display: block;
+}
+body {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 100%;
+	width: 80%;
+	margin: 0  auto 0;
+	padding: 2.5% 2.5% 5%;
+	background: white;
+	line-height: 1.8;
+}
+article {
+	width: 70%;
+}
+h2, h3, h4, h5, h6 {
+	font-size: 1em;
+	color: #97552C;
+}
+h1 {
+	font: 1.6em Verdana, Geneva, sans-serif;
+	margin-bottom: .4em;
+	color: #456644;
+}
+h2 {
+	font: 3.2em Georgia, "Times New Roman", Times, serif;
+	margin-bottom: .2em;
+}
+h3 {
+	font-size: 1.2em;
+}
+p {
+	margin-bottom: 1em;
+}
+a {
+	color: rgb(184, 126, 84);
+}
+a:hover {
+	color: rgb(120, 97, 55);
+}
+pre {
+	font-size: 1.4em;
+	color: white;
+	padding: .5em 1em;
+	border-left: 1em solid #A68048;
+	background: #666;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
+	width: 60%;
+}
+pre.wrong {
+	border-left-color: red;
+}
+pre.correct {
+	border-left-color: green;
+}
+pre span {
+	color: #F9F;
+	background: none;
+}
+.label {
+	color: #FC0;
+}
+figcaption {
+	font-style: italic;
+}
+dt {
+	font-style: italic;
+	font-size: 1.2em;
+}
+dd {
+	margin-bottom: 1.4em;
+}
+table {
+	border: 1px solid black;
+	border-collapse: collapse;
+	margin-top: 1em;
+	background: #ECE3AA;
+}
+.compatibility {
+	float: right;
+}
+.compatibility th {
+	text-indent: -3000em;
+	font-size: 0px;
+	width: 50px;
+	height: 50px;
+}
+.compatibility td {
+	text-align: center;
+}
+.yes {
+	color: #390;
+}
+.no {
+	color: #F00;
+}
+.chrome {
+	background: url(../_images/chrome.png) no-repeat center;
+}
+.mozilla {
+	background: url(../_images/firefox.png) no-repeat center;
+}
+.IE {
+	background: url(../_images/ie.png) no-repeat center;
+}
+.opera {
+	background: url(../_images/opera.png) no-repeat center;
+}
+.safari {
+	background: url(../_images/safari.png) no-repeat center;
+}
+caption {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: rgb(107, 107, 132);
+	text-align: left;
+}
+tr:nth-child(odd) {
+	background: #F3ECDD;
+}
+td {
+	border: 1px solid black;
+	padding: .5em;
+}
+th {
+	border: 1px solid black;
+	border-bottom: 3px solid black;
+	height: 3em;
+	vertical-align: center;
+	background: #999;
+	color: white;
+}
+blockquote {
+	font-style: italic;
+}
+form ul {
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+
+@media (max-width: 640px) {
+body {
+	width: 90%;
+	margin: 0 auto;
+}
+article {
+	width: 100%;
+}
+pre {
+	margin: 0 auto;
+	width: 80%;
+	padding: 2% 0 5%;
+}
+.compatibility {
+	float: none;
+}
+}

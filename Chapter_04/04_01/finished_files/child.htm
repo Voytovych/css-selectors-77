@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Child Selectors</title>
+<link href="_css/styles.css" rel="stylesheet" type="text/css">
+<style>
+p:last-child {
+	font-size: 1.2em;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>CSS Selectors</h1>
+  <h2>Child Selectors</h2>
+</header>
+<main>
+  <table class="compatibility">
+    <caption>
+    Browser compatibility
+    </caption>
+    <tr>
+      <th class="chrome">Chrome</th>
+      <th class="mozilla">Firefox (Gecko)</th>
+      <th class="IE">Internet Explorer</th>
+      <th class="opera">Opera</th>
+      <th class="safari">Safari</th>
+    </tr>
+    <tr>
+      <td><span class="yes">4</span></td>
+      <td><span class="yes">3.0</span></td>
+      <td><span class="yes">7</span></td>
+      <td><span class="yes">9.5</span></td>
+      <td><span class="yes">4</span></td>
+    </tr>
+  </table>
+  <article class="summary">
+    <p>The structural pseudo-class selectors<strong> :first-child</strong>,<strong> :last-child</strong>, and <strong>:only-child</strong> match elements when they are the first, last, or only elements within a parent element. It&rsquo;s important to note that the selector will not return a match if the targeted element is not a literal match within the parent. That is, the selector<strong> p:first-child </strong>will only return a match if a paragraph appears before any other content within the parent.</p>
+    <h3>Syntax</h3>
+    <p>As a structural pseudo-class selector, <strong>first-child</strong>, <strong>last-child</strong>, and <strong>only-child</strong> is preceded by a colon (<strong>:</strong>). To make any of the selectors element specific, you can place a simple selector prior to the colon with no whitespace.</p>
+    <figure>
+      <pre>
+<code>
+<span class="selector">:first-child</span> {
+  color: red;
+    }
+
+<span class="selector">li:first-child</span> {
+  color: red;
+    }
+    
+<span class="selector">:last-child</span> {
+  color: red;
+    }
+
+<span class="selector">li:last-child</span> {
+  color: red;
+    }  
+
+<span class="selector">:only-child</span> {
+  color: red;
+    }
+
+<span class="selector">li:only-child</span> {
+  color: red;
+    }
+    
+</code></pre>
+      <figcaption>Child selectors</figcaption>
+    </figure>
+  </article>
+  <article class="example">
+    <h3>Example:</h3>
+    <section>
+      <h4>Targeting child selectors</h4>
+      <p>The structural pseudo-class child selectors confuse some people, as they expect them to match the first, last, or only instance of a targeted element. What the selectors actually do is match an element <em>only</em> if it&rsquo;s the first, last, or only child contained within the parent repectively. This paragraph, for example, is neither the first, last, or only child of the section, so it would not return a match.</p>
+      <article>
+        <p>This paragraph is the first child of a new article</p>
+        <p>This paragraph is the last paragraph of an article</p>
+      </article>
+      <article>
+        <p>This paragraph is the first (and only) child inside an article.That also makes it the last child. The dangerous thing about these selectors is that often all three will match an element.</p>
+      </article>
+    </section>
+  </article>
+</main>
+</body>
+</html>
